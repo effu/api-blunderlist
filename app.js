@@ -13,13 +13,14 @@ const users      = require('./routes/users')
 const auth       = require('./routes/auth')
 
 const passportSetup = require('./config/passport')
+const config = require('./config/auth.js')
 
 passportSetup(passport)
 
 
 // connect to your local DB
 // mongod
-mongoose.connect('mongodb://localhost/drumpf')
+mongoose.connect(config.database.MongoDB)
 // Connect to Kaden's DB
 // mongoose.connect('mongodb://144.38.175.196/YourName')
 // connect to DJ's DB
@@ -61,5 +62,5 @@ app.use(groups)
 
 
 app.listen(3001, function () {
-  console.log('Drumpf API listening on port 3001!')
+  console.log('Blunderlist API listening on port 3001!')
 })
