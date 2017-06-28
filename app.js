@@ -19,7 +19,7 @@ passportSetup(passport)
 
 // connect to your local DB
 // mongod
-mongoose.connect('mongodb://localhost/Blunderlist')
+mongoose.connect('mongodb://localhost/drumpf')
 // Connect to Kaden's DB
 // mongoose.connect('mongodb://144.38.175.196/YourName')
 // connect to DJ's DB
@@ -30,8 +30,8 @@ app.engine('.hbs', handlebars({ defaultLayout: 'single', extname: '.hbs' }))
 app.set('view engine', '.hbs')
 
 app.get('/', function (req, res) {
-  res.render('hello', { 
-    name: 'Kaden', 
+  res.render('hello', {
+    name: 'Kaden',
     list: ['NodeJS', 'ReactJS', 'Mongo', 'Mongoose']
   })
 })
@@ -52,6 +52,6 @@ app.use(items)
 app.use(groups)
 
 
-app.listen(3000, function () {
-  console.log('Blunderlist API listening on port 3000!')
+app.listen(3001, function () {
+  console.log('Drumpf API listening on port 3001!')
 })
